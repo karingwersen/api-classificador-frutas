@@ -10,8 +10,8 @@ class Modelo:
         if path.endswith('.pkl'):
             modelo = pickle.load(open(path, 'rb'))
         elif path.endswith('.joblib'):
-            modelo, X_treino, X_teste, y_treino, scaler = joblib.load(path)
-        return modelo, X_treino, X_teste, y_treino, scaler
+            modelo, X_treino, X_teste, y_treino, y_teste, scaler = joblib.load(path)
+        return modelo, X_treino, X_teste, y_treino, y_teste, scaler
     
     def prever(modelo, X_treino, X_teste, y_treino, fruta: Fruta, scaler):
         X_input = np.array([fruta.fruta_massa, fruta.fruta_largura, fruta.fruta_altura, fruta.fruta_pontuacao_cor])

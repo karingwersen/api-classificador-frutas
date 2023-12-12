@@ -5,7 +5,7 @@ class FrutasController:
     
     @staticmethod
     def classificar_fruta(fruta: Fruta):
-        modelo, X_treino, X_teste, y_treino, scaler = Modelo.carrega_modelo("ml/classificador-frutas.joblib")
+        modelo, X_treino, X_teste, y_treino, y_teste, scaler = Modelo.carrega_modelo("ml/classificador-frutas.joblib")
 
         fruta_classificacao = Modelo.prever(modelo, X_treino, X_teste, y_treino, fruta, scaler)
 
